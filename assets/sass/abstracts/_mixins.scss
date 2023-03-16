@@ -1,0 +1,60 @@
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin section-title {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.01em;
+  color: $main-text;
+  text-transform: uppercase;
+}
+
+@mixin section-subtitle {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 4.875rem;
+  color: $heading;
+}
+
+@mixin image-border {
+  border: 2px solid #b0855b;
+  border-radius: 140px 0px;
+
+  img {
+    display: block;
+    border-radius: 140px 0px;
+    position: relative;
+
+    &.right-shift {
+      top: 1rem;
+      left: 1rem;
+    }
+
+    &.left-shift {
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+}

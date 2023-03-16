@@ -1,0 +1,88 @@
+.hero {
+  background: url('../../assets/img/decor/hero-decor.svg') no-repeat left bottom;
+  padding-bottom: 150px;
+  margin-bottom: 80px;
+
+  &__container {
+    @include flex-justify-between;
+    align-items: center;
+    gap: 0 5rem;
+  }
+
+  &__content {
+    max-width: 607px;
+  }
+
+  &__title,
+  &__subtitle,
+  &__text {
+    margin-bottom: 35px;
+  }
+
+  &__title,
+  &__text {
+    font-family: 'Open Sans';
+    color: $main-text;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6875rem;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 4.5rem;
+    line-height: 4.875rem;
+    color: $heading;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+  }
+
+  &__image {
+    @include image-border;
+  }
+
+  @media (max-width: 1070px) {
+    & {
+      background: none;
+      padding-bottom: 0;
+    }
+
+    &__container {
+      flex-direction: column;
+      gap: 3rem 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__image {
+      display: none;
+    }
+
+    &__content {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__content {
+      padding-top: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 3.5rem;
+    }
+
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+}

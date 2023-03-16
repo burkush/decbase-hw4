@@ -1,0 +1,96 @@
+.contact {
+  padding: 80px 0;
+
+  &__subtitle,
+  &__text,
+  &__hr {
+    margin-bottom: 35px;
+  }
+
+  &__subtitle,
+  &__text {
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+    text-transform: uppercase;
+  }
+
+  &__hr {
+    max-width: 461px;
+    height: 0px;
+    border: 1px solid #c4c4c4;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: $main-text;
+  }
+
+  &__form {
+    max-width: 770px;
+    margin: 0 auto;
+  }
+
+  &__fieldset {
+    margin-bottom: 40px;
+    @include flex-justify-between;
+    gap: 40px 100px;
+
+    & > * {
+      flex-grow: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__label {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #ff6b6b;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.75rem;
+    border-radius: 20px 0px;
+    background-color: #eee;
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: $main-text;
+
+    &:focus {
+      outline: 2px solid $main-green;
+    }
+  }
+
+  &__submit {
+    display: block;
+    margin: 60px auto 0;
+    width: 180px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 576px) {
+    &__fieldset {
+      flex-direction: column;
+      gap: 20px 100px;
+      margin-bottom: 40px;
+    }
+  }
+}

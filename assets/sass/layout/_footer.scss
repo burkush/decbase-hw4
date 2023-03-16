@@ -1,0 +1,129 @@
+.footer {
+  padding-top: 90px;
+  background-color: #f8f8f8;
+
+  &__content {
+    margin-bottom: 50px;
+    @include flex-justify-between;
+    gap: 30px;
+  }
+
+  &__logo-container {
+    flex-basis: 280px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  &__motto {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: $main-text;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 0 80px;
+  }
+
+  &__nav-title {
+    margin-bottom: 2rem;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: $heading;
+  }
+
+  &__nav-list {
+    li {
+      margin-bottom: 1rem;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      color: $main-text;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__social {
+    @include flex-align-center;
+    gap: 20px;
+  }
+
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    @include flex-center;
+    background-color: #d5d5d5;
+    transition: all 200ms ease-in-out;
+
+    &.twitter {
+      background-color: $main-green;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      scale: 1.05;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__copyright {
+    padding: 25px 0;
+    border-top: 1px solid #c4c4c4;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: $main-text;
+  }
+
+  @media (max-width: 992px) {
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px 0;
+    }
+
+    &__logo-container {
+      text-align: center;
+      flex-basis: unset;
+    }
+
+    &__social {
+      justify-content: center;
+    }
+
+    &__nav-title,
+    &__nav-list {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 568px) {
+    & {
+      padding-bottom: 30px;
+    }
+
+    &__nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px 0;
+    }
+  }
+}

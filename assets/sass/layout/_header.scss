@@ -1,0 +1,209 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 3rem 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  background-color: #fff;
+  color: $main-text;
+  transition: padding 200ms ease-in;
+
+  &.scrolled {
+    padding: 1rem 0 0;
+    border-bottom: 1px solid #d3d3d3;
+
+    & > #progress-bar {
+      margin-top: 0.8rem;
+    }
+  }
+
+  &__container {
+    @include flex-between-center;
+  }
+
+  &__logo {
+    transition: scale 500ms ease-in;
+
+    &:hover {
+      scale: 1.025;
+    }
+  }
+
+  & #progress-bar {
+    --progress: 0;
+    margin: 2.5rem 0 0;
+    height: 5px;
+    width: var(--progress);
+    background: linear-gradient(
+      90deg,
+      rgba(213, 165, 134, 1) 0%,
+      rgba(246, 167, 117, 1) 45%,
+      rgba(251, 141, 131, 1) 100%
+    );
+    transition: margin 200ms ease-in, width 200ms ease-out;
+  }
+
+  // mobile navigation toggle: invisible on large screens
+  &__toggle,
+  &__navicon {
+    display: none;
+  }
+
+  &__nav {
+    flex-grow: 1;
+    @include flex-align-center;
+    justify-content: flex-end;
+    gap: 1.5rem 4rem;
+  }
+
+  &__navlist {
+    @include flex-align-center;
+    gap: 0 1.5rem;
+    font-weight: 600;
+
+    & > li > a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border: 5px solid transparent;
+      border-radius: 20px;
+      text-transform: uppercase;
+      transition: all 200ms linear;
+
+      &:hover {
+        border-color: $main-green;
+        color: $main-green;
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-align-center;
+    font-weight: 600;
+
+    .header__signup {
+      display: inline-block;
+      padding: 0.5rem 1.1rem;
+      border: 5px solid #caa892;
+      border-radius: 15px 0;
+      background-color: #caa892;
+      color: #fff;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        background-color: transparent;
+        color: #caa892;
+      }
+    }
+  }
+
+  @media (max-width: 992px) and (orientation: portrait),
+    (max-width: 992px) and (orientation: landscape) {
+    &__nav {
+      position: fixed;
+      top: 0;
+      left: 20%;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: translateX(100%);
+      touch-action: none;
+
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      padding: 7rem 0 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      transition: all 300ms ease-out;
+    }
+
+    &__navicon {
+      display: block;
+      z-index: 2;
+      height: 45px;
+      width: 40px;
+
+      &::before,
+      &::after,
+      .header__burger {
+        content: '';
+        display: block;
+        height: 4px;
+        margin: 8px 0;
+        background-color: #a6a6a6;
+        transition: 300ms;
+      }
+    }
+
+    &__toggle:checked ~ .header__navicon::before {
+      transform: translateY(12px) rotate(135deg);
+    }
+
+    &__toggle:checked ~ .header__navicon::after {
+      transform: translateY(-12px) rotate(-135deg);
+    }
+
+    &__toggle:checked ~ .header__navicon > &__burger {
+      transform: scale(0);
+    }
+
+    &__toggle:checked ~ &__nav {
+      transform: translateX(0);
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    &__navlist {
+      width: 100%;
+      flex-direction: column;
+      gap: 1rem 0;
+
+      & > li {
+        width: 100%;
+        padding: 0.2rem 0;
+        text-align: center;
+      }
+
+      & > li > a {
+        font-size: 1.2rem;
+        color: #fff;
+      }
+    }
+
+    &__actions {
+      width: 100%;
+      margin-top: 0.5rem;
+      font-size: 1.3rem;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 992px) and (orientation: landscape) {
+    &__nav {
+      left: 0;
+      padding-bottom: 2rem;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    &__navlist {
+      flex-direction: row;
+    }
+  }
+
+  @media (max-height: 600px) and (orientation: portrait) {
+    &__actions {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__nav {
+      padding: 2.5rem 0 0;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.artworks {
+  padding-bottom: 80px;
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+    margin-bottom: 50px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 2rem;
+  }
+
+  &__work {
+    font-family: 'Open Sans';
+    max-width: 320px;
+    padding: 10px;
+    transition: scale 300ms ease-in;
+
+    &:hover {
+      scale: 1.0125;
+    }
+  }
+
+  &__img {
+    margin-bottom: 1.5rem;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__work-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $heading;
+  }
+
+  &__author {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 1325px) {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

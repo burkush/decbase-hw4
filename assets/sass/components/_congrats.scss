@@ -1,0 +1,42 @@
+.congrats {
+  display: none;
+  padding: 10px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+
+  font-family: 'Open Sans';
+
+  background: radial-gradient(
+    circle,
+    rgb(251, 199, 222) 0%,
+    rgb(189, 217, 248) 100%
+  );
+
+  &.grid {
+    display: grid;
+    place-content: center;
+  }
+
+  &__title,
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #3d33d5;
+  }
+
+  &__text {
+    font-size: 2rem;
+    line-height: 1.5;
+    max-width: 700px;
+    background: linear-gradient(to right, #22199e 0%, #cf0eb5 100%);
+    background-clip: text;
+    color: transparent;
+  }
+}

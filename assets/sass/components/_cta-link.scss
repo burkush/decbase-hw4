@@ -1,0 +1,18 @@
+.cta {
+  display: inline-block;
+  padding: 0.4rem 1.1rem;
+  border: 5px solid $main-green;
+  border-radius: 20px 0px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 1.125rem;
+  background-color: $main-green;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    color: $main-green;
+  }
+}
