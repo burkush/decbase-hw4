@@ -5,7 +5,7 @@ const slider = document.querySelector('.testimonials__slider-wrapper');
 const sliderLine = document.querySelector('.testimonials__slides');
 const slides = document.querySelectorAll('.testimonials__slide');
 
-window.addEventListener('resize', init);
+window.addEventListener('resize', initSlider);
 
 prevBtn.addEventListener('click', goPrev);
 nextBtn.addEventListener('click', goNext);
@@ -56,7 +56,7 @@ function getWindowWidth() {
   return window.innerWidth;
 }
 
-function init() {
+function initSlider() {
   windowWidth = getWindowWidth();
   isSingleSlide = windowWidth < 992 ? true : false;
 
@@ -88,4 +88,4 @@ function init() {
   rollSlider();
 }
 
-init();
+initSlider();

@@ -104,7 +104,7 @@
     width: 40px;
     height: 40px;
     box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.3);
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: opacity 200ms ease-in-out;
 
@@ -112,18 +112,10 @@
 
     &_prev {
       background-color: #fff;
-
-      i {
-        color: $main-text;
-      }
     }
 
     &_next {
       background-color: $main-green;
-
-      i {
-        color: #fff;
-      }
     }
 
     &:hover {

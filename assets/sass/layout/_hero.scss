@@ -64,7 +64,11 @@
 
   @media (max-width: 768px) {
     &__image {
-      display: none;
+      border: none;
+
+      img {
+        inset: 0;
+      }
     }
 
     &__content {
